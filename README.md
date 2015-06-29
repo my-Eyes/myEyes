@@ -19,6 +19,7 @@ I am going to use this project to grow in multiple ways. I am going to grow as a
 ## User stories
 * As a user I want to be able to signup/signin/signout
 * As a user I want to be able use a tour
+  - go through step by step (first with a next, then with geolocation)
 * As a user I want to be able to create a tour
 * As a user I want to browse tours by location
 * As a user I want to browse tours by interest
@@ -27,9 +28,13 @@ I am going to use this project to grow in multiple ways. I am going to grow as a
 * As a user I want to be able to see tours by me
 * As a user I want to see all of the tours written by another user
 * As a user I want to be able to interact with other users
+  - by commenting on tours
+  - by becoming "friends", a user can see when another user uploads a tour
 * As a user I want to be able to see how many times a tour has been favorited
 * As a user I want to be able to "Save for Later"
 * As a user I want to be able to organize tours into trips (plan)
 
 ## Game Plan
 I am going to start by mapping out how I want to write this app. What models/migrations am I going to need? How is my data going to relate to each other? What is my schema? How is my app going to be presented? What are the wireframes? I am going to figure this all out by the end of the day today (6/25) and then use trello to create a kanban board to keep myself on track with hard deadlines.
+
+At the moment, I am planning on using a rails server and an iOS client. I'll be passing json to swift.
