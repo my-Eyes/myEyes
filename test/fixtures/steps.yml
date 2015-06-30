@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tour_id: 
+  text: MyString
+  number: 1
+
+two:
+  tour_id: 
+  text: MyString
+  number: 1
