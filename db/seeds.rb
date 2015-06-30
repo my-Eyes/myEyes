@@ -13,5 +13,13 @@
 
 @tour = Tour.create(local_id: @user1.id, name: "My Tour", interest_id: @interest1.id, description: "Stuff and things")
 
+@photo = Photo.create(url: "danis photo")
+
+@location = Location.create(city: "paris")
+
+
+
+
+
 
 

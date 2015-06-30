@@ -6,7 +6,6 @@ class CreateLocations < ActiveRecord::Migration
       t.string :state
       t.string :latitude
       t.string :longitude
-      t.belongs_to :step, index: true, foreign_key: true
       t.string :address
 
       t.timestamps null: false

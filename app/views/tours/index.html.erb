@@ -1,0 +1,6 @@
+<h1>Index list of tours</h1>
+
+<% @tours.each do |tour| %>
+  <%= tour.name %>: <%= tour.description %> by <%= tour.local_id %>
+  <br>
+<% end %>

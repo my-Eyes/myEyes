@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629234036) do
+ActiveRecord::Schema.define(version: 20150630201804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "favorite_tours", force: :cascade do |t|
+    t.integer  "visitor_id"
+    t.integer  "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "interests", force: :cascade do |t|
     t.string   "title"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -29,22 +36,16 @@ ActiveRecord::Schema.define(version: 20150629234036) do
     t.string   "state"
     t.string   "latitude"
     t.string   "longitude"
-    t.integer  "step_id"
     t.string   "address"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
-  add_index "locations", ["step_id"], name: "index_locations_on_step_id", using: :btree
-
   create_table "photos", force: :cascade do |t|
     t.string   "url"
-    t.integer  "step_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "photos", ["step_id"], name: "index_photos_on_step_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "local_id"
@@ -64,8 +65,10 @@ ActiveRecord::Schema.define(version: 20150629234036) do
     t.integer  "tour_id"
     t.text     "text"
     t.integer  "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "photo_id"
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "steps", ["tour_id"], name: "index_steps_on_tour_id", using: :btree
@@ -75,8 +78,9 @@ ActiveRecord::Schema.define(version: 20150629234036) do
     t.string   "name"
     t.integer  "interest_id"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "fav_count",   default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "tours", ["interest_id"], name: "index_tours_on_interest_id", using: :btree
@@ -103,8 +107,6 @@ ActiveRecord::Schema.define(version: 20150629234036) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "locations", "steps"
-  add_foreign_key "photos", "steps"
   add_foreign_key "steps", "tours"
   add_foreign_key "tours", "interests"
 end
