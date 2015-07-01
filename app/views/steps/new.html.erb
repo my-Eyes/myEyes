@@ -1,0 +1,36 @@
+<h1>new step for <%= @tour.name %>, step # <%= @step_number %></h1>
+<br><br>
+
+
+
+
+
+<form class="photo_url" action="/photos" method="post">
+  <label name="photo_url">link for photograph: </label>
+  <input type="text" name="photo_url">
+  <input type="submit" value="add photo">
+</form>
+<br><br>
+<form class="location_submit_form" action="/locations" method="post">
+
+  <label name="neighborhood">neighborhood</label>
+  <input type="text" name="neighborhood">
+  <br>
+  <label name="city">city</label>
+  <input type="text" name="city">
+  <br>
+  <label name="state">state</label>
+  <input type="text" name="state">
+  <br>
+  <label name="latitude">latitude</label>
+  <input type="text" name="latitude">
+  <br>
+  <label name="longitude">longitude</label>
+  <input type="text" name="longitude">
+  <br>
+  <label name="address">address</label>
+  <input type="text" name="address">
+  <br>
+  <input type="submit" value="add location">
+</form>
+
