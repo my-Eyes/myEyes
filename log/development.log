@@ -4679,3 +4679,898 @@ Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 16:30:28 -0700
+
+
+Started GET "/users/2/tours/new" for ::1 at 2015-06-30 16:49:43 -0700
+Processing by ToursController#new as HTML
+  Parameters: {"user_id"=>"2"}
+  Rendered tours/new.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (1.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/2/tours" for ::1 at 2015-06-30 17:00:35 -0700
+Processing by ToursController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FdFijh+EgdclycDk6PgU+mAkfBu/YqMNxVpWmg7pbJyMczJ6V+TCCq64uQ7B38Vsi0RFGvWkBnuZ2RQKjtXZbQ==", "tour"=>{"name"=>"pauls tour", "description"=>"really awesome tour"}, "commit"=>"Create", "user_id"=>"2"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tours" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "pauls tour"], ["description", "really awesome tour"], ["created_at", "2015-07-01 00:00:36.104406"], ["updated_at", "2015-07-01 00:00:36.104406"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Redirected to http://localhost:3000/users/2/tours/12/steps/new
+Completed 302 Found in 136ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 17:00:36 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.3ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Tour with 'id'=):
+  app/controllers/steps_controller.rb:3:in `new'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (105.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (127.4ms)
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 17:01:14 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.2ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (22.8ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 473ms (Views: 431.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 17:01:15 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 17:50:26 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (20.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 55.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 17:50:27 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 17:50:50 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.3ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (95.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (97.5ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 135ms (Views: 36.3ms | ActiveRecord: 96.0ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 17:50:50 -0700
+
+
+Started POST "/photos/new" for ::1 at 2015-06-30 17:51:01 -0700
+
+ActionController::RoutingError (No route matches [POST] "/photos/new"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.3) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (44.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (15.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (34.4ms)
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 17:59:17 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.3ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 34.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 17:59:17 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:01:08 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.3ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 38.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:01:08 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:02:43 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:02:43 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:03:00 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.2ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:03:00 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:03:16 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:03:16 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:30:20 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.2ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 326ms (Views: 322.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/listeners.self-583c7b25b2c40debdbb8916131c40fa2959f804d8f61bd8a345d4c43c4267d04.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:30:21 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:32:17 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 203ms (Views: 199.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/listeners.self-1df92189725102d47fcb0b2e7c82815fc44c6c0d21eedbeee7a6d3ef93cb23c6.js?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:32:17 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:32:18 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:32:18 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:32:18 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:32:37 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.3ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 199ms (Views: 194.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/listeners.self-ff58dbd4b9b8745cf4047c52d7c2c0f7bc29b4c07da10c2b16c223a749f5535b.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:32:38 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:34:50 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 300ms (Views: 296.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/listeners.self-e4985d5185e5a3bd900d38f386ac78f8a09a3423985fc68f18559dff8c901c31.js?body=1" for ::1 at 2015-06-30 18:34:50 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:34:51 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:35:08 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.2ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 199ms (Views: 195.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/listeners.self-0a54c06c459d79f7a00ae66f758f5882c3a6335cc48b2067d6a533d2a47d86bb.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:35:09 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:42:40 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.2ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 290ms (Views: 199.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/listeners.self-59be2f412bcc5e623dad7f4a0c71b77bd61f98c3b750efb3f939af19d105697d.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:42:40 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:44:30 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.4ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.4ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 319ms (Views: 311.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 18:44:30 -0700
+
+ActionController::RoutingError (No route matches [POST] "/users/2/tours/12/steps/new"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.3) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (14.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (31.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (68.9ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/listeners.self-d9684a7f14718a87a3fec36d49e9af81c2d5869b46116bd1221f83500a645349.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 18:44:30 -0700
+
+
+Started POST "/photos" for ::1 at 2015-06-30 19:38:20 -0700
+
+ActionController::RoutingError (uninitialized constant PhotosController):
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `const_get'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:261:in `block in constantize'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `each'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `inject'
+  activesupport (4.2.1) lib/active_support/inflector/methods.rb:259:in `constantize'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:70:in `controller_reference'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:60:in `controller'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:39:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.3) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.text.erb (0.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.text.erb (5.2ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (16.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (34.6ms)
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 19:38:40 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[35mTour Load (0.3ms)[0m  SELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1[0m  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 205ms (Views: 201.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/listeners.self-d58138675ed3e7ccd6849c6a3ad3c54dad7defc4ed231fd0689e47e09c872ae9.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 19:38:40 -0700
+
+
+Started GET "/users/2/tours/12/steps/new" for ::1 at 2015-06-30 19:48:35 -0700
+Processing by StepsController#new as HTML
+  Parameters: {"user_id"=>"2", "tour_id"=>"12"}
+  [1m[36mTour Load (0.3ms)[0m  [1mSELECT  "tours".* FROM "tours" WHERE "tours"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "steps" WHERE "steps"."tour_id" = $1  [["tour_id", 12]]
+  Rendered steps/new.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered devise/menu/_registration_items.html.erb (2.0ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 196ms (Views: 192.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/listeners.self-3ebdd82b4b55f913c70fd5fa6335e0a8ff43ebd7f18991f6434aca6d7d1e059b.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/application.self-6eda62367c55ac78d0de35bdf034a144dc7b06154e6d807045014cdd1ab97f5d.css?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-06-30 19:48:35 -0700
