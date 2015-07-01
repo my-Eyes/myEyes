@@ -13,6 +13,7 @@ var photo_url_listener = function(){
     console.log('in submit new photo listener')
     var path = $(this).attr('action')
     var photoURL = $(this).children('.photo_url_input_field').val()
+    var that = this
 
 
     //debugger
@@ -23,8 +24,15 @@ var photo_url_listener = function(){
       data: { photoAddress:photoURL},
       success: function(data){
         console.log(data)
+
         if (!data.saved){
           // append to DOM some sort of message that the photo params didn't validate
+        }
+        else {
+          $('body .displayed_photo').attr("src", data.address)
+
+
+
         }
       }
       })
