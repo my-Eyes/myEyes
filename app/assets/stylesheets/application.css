@@ -22,8 +22,6 @@
 body{
   background-color: #E1F7FF;
   color: #02063B;
-/*  margin-left: 2em;
-  margin-right: 2em;*/
   font-family: helvetica;
 }
 /*=============================Header=====================================*/
@@ -36,9 +34,14 @@ body{
  .hmenu {
   text-align: right;
   list-style: none;
-  /*margin: 0 0 1em;*/
   padding: 1em;
 }
+
+/* ul.hmenu {
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+}*/
 
 .hmenu li {
   display: inline;
@@ -82,7 +85,6 @@ a {
 .tour img {
   max-height: 10em;
   max-width: 10em;
-  /*padding: 1em;*/
   display: inline;
 }
 
@@ -95,12 +97,16 @@ a {
 
 
 
- ul.hmenu {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
-}
 
-ul.hmenu li {
-  display: inline;
-}
+
+
+
+
+
+
+
+
+
+
+
+

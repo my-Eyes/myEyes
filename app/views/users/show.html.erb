@@ -2,6 +2,7 @@
   <div class="personal">
     <img class="profile-pic" src="https://s-media-cache-ak0.pinimg.com/236x/13/92/53/139253f65624e9e948496d4ac1c8d81d.jpg">
 
+
     <h1>Hello, <%= @user.first_name %>!</h1>
     <h3>Keep exploring new areas!</h3>
   </div>
@@ -37,3 +38,31 @@
 </div>
 
 
+  <div class="tour-sections">
+    <div class="buttons">
+      <%= button_to "Create New Tour", new_user_tour_path(@user.id) %>
+    </div>
+
+    <div class="buttons">
+      <%= button_to "Browse Tours", user_tours_path(@user.id) %>
+    </div>
+
+    <h2>Your Favorites</h2>
+    <div class="tour">
+      <p><img src="http://digital-photography-school.com/wp-content/uploads/2010/05/travel-photography-01Part-II.jpg"></p>
+      <p><%= link_to ("Tour Title") %></p>
+    </div>
+    <div class="tour">
+      <p><img src="http://www.phototraces.net/wp-content/uploads/Travel_Photography_Blog_SanFrancisco_201111071.jpg"></p>
+      <p><%= link_to ("Tour Title") %></p>
+    </div>
+    <div class="tour">
+      <p><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRaBPLmKh8PfhWXFeGCYHXFQTz9GOVV1rtQx4EpxDYCb95RidOMjg"></p>
+      <p><%= link_to ("Tour Title") %></p>
+    </div>
+
+
+    <h2>Tours You Created</h2>
+    </div>
+  </div>
+</div>
