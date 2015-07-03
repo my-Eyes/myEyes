@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyEyes</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+<ul class="hmenu">
+  <img class="head-icon" src="http://www.clker.com/cliparts/g/C/A/q/j/k/eye-biggest.svg">
+  <%= render 'devise/menu/registration_items' %>|
+  <%= render 'devise/menu/login_items' %>
+</ul>
+</div>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
