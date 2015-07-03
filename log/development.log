@@ -9460,3 +9460,186 @@ Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-06-30 20:09:36 -0700
+
+
+Started GET "/" for ::1 at 2015-07-03 13:29:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (21.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.9ms)
+  Rendered devise/menu/_login_items.html.erb (0.5ms)
+Completed 200 OK in 1747ms (Views: 1725.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2015-07-03 13:29:57 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-22ef613ba36edc383d038fef5833a658f14b82afed402bd5774540f4e248d251.css?body=1" for ::1 at 2015-07-03 13:29:57 -0700
+
+
+Started POST "/users/sign_in" for ::1 at 2015-07-03 13:30:20 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lsVnKiN+3w32WaKYV0KO/9j+EkS63fvhF5JjN4nMwgsGQ5WehP6zHMasMcYT9BM68UHX+tzktjwiJJft6TjMwQ==", "user"=>{"email"=>"drigsby@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "drigsby@hotmail.com"]]
+Completed 401 Unauthorized in 10ms (ActiveRecord: 1.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lsVnKiN+3w32WaKYV0KO/9j+EkS63fvhF5JjN4nMwgsGQ5WehP6zHMasMcYT9BM68UHX+tzktjwiJJft6TjMwQ==", "user"=>{"email"=>"drigsby@hotmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 108ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-07-03 13:30:29 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `saved_tours' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `show'
+
+
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.3ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (17.0ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/colettespeer/.rbenv/versions/2.0.0-p481/lib/ruby/gems/2.0.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (38.3ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-07-03 13:30:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/vqvezV3Rsuwr23QxayEHH5X7t2F17OmhfOivL0iQwJufF3Pkvcq2oBa/o6BGhnZV+grY+Pu/nuwRVZm3dZNyA==", "user"=>{"email"=>"me@me.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "me@me.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/vqvezV3Rsuwr23QxayEHH5X7t2F17OmhfOivL0iQwJufF3Pkvcq2oBa/o6BGhnZV+grY+Pu/nuwRVZm3dZNyA==", "user"=>{"email"=>"me@me.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.4ms)
+  Rendered devise/menu/_registration_items.html.erb (0.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 114ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-07-03 13:30:59 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 13:31:22 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MSOBH/qk504RdHa867X7jdMxyc3QQ6X1Av2O50xFZsKhpXOrXSSLXyGB5eKvA2ZI+o4Mc7Z66Cg3S3o9LLFoCA==", "user"=>{"first_name"=>"me", "last_name"=>"me", "username"=>"me", "email"=>"me@me.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "image_url"=>"http://dog.com/dog.jpg"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'me@me.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("first_name", "last_name", "username", "email", "encrypted_password", "image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["first_name", "me"], ["last_name", "me"], ["username", "me"], ["email", "me@me.com"], ["encrypted_password", "$2a$10$52fFRmxkejm8tQ41A7d.cuLWguuO1np2SIlYKnuGYvZQcsNVMlFhq"], ["image_url", "http://dog.com/dog.jpg"], ["created_at", "2015-07-03 20:31:22.579750"], ["updated_at", "2015-07-03 20:31:22.579750"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-07-03 20:31:22.583427"], ["current_sign_in_at", "2015-07-03 20:31:22.583427"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-07-03 20:31:22.584373"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 148ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2015-07-03 13:31:22 -0700
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  Rendered devise/menu/_registration_items.html.erb (0.1ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 51ms (Views: 39.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2015-07-03 13:32:00 -0700
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+  Rendered devise/menu/_registration_items.html.erb (0.3ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/application.self-ce01826e815919943411c5861fe6786427b7f9a2c5b238611fb571a198ad0ed1.css?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/listeners.self-3ebdd82b4b55f913c70fd5fa6335e0a8ff43ebd7f18991f6434aca6d7d1e059b.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-03 13:32:00 -0700
+
+
+Started GET "/" for ::1 at 2015-07-03 13:35:23 -0700
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+Processing by UsersController#show as HTML
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered devise/menu/_registration_items.html.erb (0.2ms)
+  Rendered devise/menu/_login_items.html.erb (0.1ms)
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/steps.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/tours.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/application.self-5a189f25f0087befd701a3db5a3a341b45865092a456580e0f447f2519b4f73c.css?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/listeners.self-3ebdd82b4b55f913c70fd5fa6335e0a8ff43ebd7f18991f6434aca6d7d1e059b.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/steps.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/tours.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-07-03 13:35:23 -0700
