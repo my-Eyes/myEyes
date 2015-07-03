@@ -1,16 +1,17 @@
 <h1>new step for <%= @tour.name %>, step # <%= @step_number %></h1>
 <br><br>
 
-
-
-
-
 <form class="photo_url" action="/photos" method="post">
   <label name="photo_url">link for photograph: </label>
-  <input type="text" name="photo_url">
+  <input type="text" class="photo_url_input_field" name="photo_url">
   <input type="submit" value="add photo">
 </form>
+
 <br><br>
+
+<div class="photo_frame">
+  <img class="displayed_photo" src="" style="height: 100px; width: 100px">
+</div>
 <form class="location_submit_form" action="/locations" method="post">
 
   <label name="neighborhood">neighborhood</label>
@@ -33,4 +34,13 @@
   <br>
   <input type="submit" value="add location">
 </form>
+
+<form action="/users/<%= @user.id %>/tours/<%= @tour.id %>/steps" method="post">
+  <label name="text">Description for this step:</label>
+  <br>
+  <textarea name="text" cols="50" rows="5"></textarea>
+  <input type="submit">
+
+</form>
+
 
