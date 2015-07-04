@@ -1,12 +1,14 @@
-<h2>New Tour</h2>
+<div class="new_tour">
+<h2>Show Us What You See</h2>
 
 <%= form_for ([:user,@tour]) do |f| %>
 
   <%= f.label "Name your tour!" %>
   <%= f.text_field :name %>
-
+  <br>
   <%= f.label "Describe your tour!" %>
   <%= f.text_field :description %>
 
   <%= f.submit "Create" %>
 <% end %>
+</div>
