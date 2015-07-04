@@ -9,17 +9,16 @@
 
   <body>
 
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <div class="header">
     <ul class="hmenu">
-      <img class="head-icon" src="http://www.clker.com/cliparts/g/C/A/q/j/k/eye-biggest.svg">
+      <%= link_to image_tag("http://www.clker.com/cliparts/g/C/A/q/j/k/eye-biggest.svg", class: "head-icon"), root_path %>
       <%= render 'devise/menu/registration_items' %>|
       <%= render 'devise/menu/login_items' %>
     </ul>
   </div>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
 
   <%= yield %>
 

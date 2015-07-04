@@ -23,13 +23,16 @@ body{
   background-color: #E1F7FF;
   color: #02063B;
   font-family: helvetica;
+  margin: 0;
 }
 /*=============================Header=====================================*/
  .header {
   background-color: white;
   width: 100%;
+  position: relative;
   margin-top: 0;
   padding: 0;
+
 }
  .hmenu {
   text-align: right;
@@ -88,7 +91,9 @@ a {
 }
 
 /*=======================================New Tour=========================*/
-
+.new_tour {
+  text-align: center;
+}
 
 /*=======================================New Step==========================*/
 
