@@ -34,7 +34,8 @@
 
     <h2>Tours You Created</h2>
       <% @user_tours.each do |tour| %>
-        <%= tour.name %>
+        <%= link_to ("#{tour.name}"), user_tour_path(@user.id, tour.id) %>
+        <br>
       <% end %>
     </div>
   </div>
