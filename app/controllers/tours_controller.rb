@@ -9,10 +9,7 @@ class ToursController < ApplicationController
   end
 
   def create
-    # p '************************************'
-    # p params
-    # p params[:tour]
-    # p '************************************'
+
     @tour = Tour.new(name: params[:tour][:name], local_id: current_user.id, description: params[:tour][:description])
 
     if @tour.save

@@ -14,7 +14,7 @@
     </div>
 
     <div class="buttons">
-      <%= button_to "Browse Tours", user_tours_path(@user.id) %>
+      <%= button_to "Browse Tours", user_tours_path(@user.id), :method => :get %>
     </div>
 
     <h2>Your Favorites</h2>

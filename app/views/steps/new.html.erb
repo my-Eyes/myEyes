@@ -1,5 +1,6 @@
 <h1 class="ta-c">New step for: <%= @tour.name %></h1>
 <h2 class="ta-c"> Step number <%= @step_number %></h2>
+<h3 class="ta-c"><%= link_to "Finish Tour", user_tour_path(@user.id, @tour.id), :method => :get %></h3>
 <br><br>
 
 
@@ -43,9 +44,9 @@
       <textarea name="text" cols="50" rows="5"></textarea>
       <br>
       <div class="ta-r">
-      <input type="submit" value = "Next Step">
+      <input type="submit" value = "Save Step">
     </form>
 
-  <%= button_to "Finish Tour", user_tour_path(@user.id, @tour.id), :method => :get %>
+
   </div>
 </div>
