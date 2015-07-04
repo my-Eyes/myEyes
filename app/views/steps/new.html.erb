@@ -1,46 +1,52 @@
-<h1>New step for: <%= @tour.name %></h1>
-<h2> Step number <%= @step_number %></h2>
+<h1 class="ta-c">New step for: <%= @tour.name %></h1>
+<h2 class="ta-c"> Step number <%= @step_number %></h2>
 <br><br>
 
-<form class="photo_url" action="/photos" method="post">
-  <label name="photo_url">Link for photograph: </label>
-  <input type="text" class="photo_url_input_field" name="photo_url">
-  <input type="submit" value="Add photo">
-</form>
 
-<br><br>
+  <div class="photo_box">
+    <form class="photo_url" action="/photos" method="post">
+      <label name="photo_url">Link for photograph: </label>
+      <input type="text" class="photo_url_input_field" name="photo_url">
+      <input type="submit" value="Add photo">
+      <img class="displayed_photo" src="" style="height: 100px; width: 100px">
+    </form>
+  </div>
 
-<div class="photo_frame">
-  <img class="displayed_photo" src="" style="height: 100px; width: 100px">
+    <form class="location_submit_form" action="/locations" method="post">
+      <div class="address_fields">
+        <label name="neighborhood">Neighborhood</label>
+        <input type="text" name="neighborhood">
+        <br>
+        <label name="address">Address</label>
+        <input type="text" name="address">
+        <br>
+        <label name="city">City</label>
+        <input type="text" name="city">
+        <br>
+        <label name="state">State</label>
+        <input type="text" name="state">
+        <br>
+        <label name="latitude">Latitude</label>
+        <input type="text" name="latitude">
+        <br>
+        <label name="longitude">Longitude</label>
+        <input type="text" name="longitude">
+        <br>
+        <input type="submit" value="Add location">
+      </div>
+    </form>
+
+  <div class="new_step">
+    <form action="/users/<%= @user.id %>/tours/<%= @tour.id %>/steps" method="post">
+      <label name="text">Description for this step:</label>
+      <br>
+      <textarea name="text" cols="50" rows="5"></textarea>
+      <br>
+      <div class="ta-r">
+      <input type="submit" value = "Next Step">
+    </form>
+
+    <%= button_to "Finish Tour", user_tour_path(@user.id, @tour.id) %>
+
+  </div>
 </div>
-<form class="location_submit_form" action="/locations" method="post">
-
-  <label name="neighborhood">Neighborhood</label>
-  <input type="text" name="neighborhood">
-  <br>
-  <label name="address">Address</label>
-  <input type="text" name="address">
-  <br>
-  <label name="city">City</label>
-  <input type="text" name="city">
-  <br>
-  <label name="state">State</label>
-  <input type="text" name="state">
-  <br>
-  <label name="latitude">Latitude</label>
-  <input type="text" name="latitude">
-  <br>
-  <label name="longitude">Longitude</label>
-  <input type="text" name="longitude">
-  <br>
-  <input type="submit" value="Add location">
-</form>
-
-<form action="/users/<%= @user.id %>/tours/<%= @tour.id %>/steps" method="post">
-  <label name="text">Description for this step:</label>
-  <br>
-  <textarea name="text" cols="50" rows="5"></textarea>
-  <input type="submit" value = "Next Step">
-</form>
-
-<%= button_to "Finish Tour", user_tour_path(@user.id, @tour.id) %>
