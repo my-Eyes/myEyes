@@ -43,4 +43,4 @@
   <input type="submit" value = "Next Step">
 </form>
 
-<%= button_to "Finish Tour", user_tour_path(@user.id, @tour.id) %>
+<%= button_to "Finish Tour", user_tour_path(@user.id, @tour.id), :method => :get %>

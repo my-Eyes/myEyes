@@ -1,0 +1,6 @@
+<h1>
+  <%= @tour.name %> by <%= @local.first_name %> <%= @local.last_name %>
+</h1>
+<% @tour_steps.each do |step| %>
+  <%= step.number %>
+<% end %>

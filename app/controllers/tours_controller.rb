@@ -13,7 +13,7 @@ class ToursController < ApplicationController
     # p params
     # p params[:tour]
     # p '************************************'
-    @tour = Tour.new(name: params[:tour][:name], description: params[:tour][:description])
+    @tour = Tour.new(name: params[:tour][:name], local_id: current_user.id, description: params[:tour][:description])
 
     if @tour.save
       redirect_to "/users/#{current_user.id}/tours/#{@tour.id}/steps/new"
@@ -21,4 +21,11 @@ class ToursController < ApplicationController
       render new
     end
   end
+
+  def show
+    @tour = Tour.find(params[:id])
+    @tour_steps = @tour.steps
+    @local = User.find(@tour.local_id)
+  end
+
 end
