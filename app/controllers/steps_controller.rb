@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
    skip_before_action :verify_authenticity_token
-  def new
+
+   def new
     @user = current_user
     @tour = Tour.find(params[:tour_id])
     @step_number = @tour.steps.count + 1
@@ -20,12 +21,16 @@ class StepsController < ApplicationController
       )
 
     if step.save
+      p '*' * 30
       p 'saved'
+      p '*' * 30
       session[:photo_id] = nil
       session[:location_id] = nil
       redirect_to action: 'new'
     else
+      p '*' * 30
       p 'didnt save'
+      p '*' * 30
       @step = step
       @tour = tour
       @user = current_user
