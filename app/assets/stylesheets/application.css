@@ -166,12 +166,22 @@ a {
 }
 
 /*======================================View Tour=======================*/
+.user-tours {
+  background-color: #FFEBBA;
+  padding: 1em;
+  border-radius: 25px;
+  margin: auto;
+  border: 3px solid #FF851D;
+  width: 75%;
+}
+
+
 .show-tour {
   margin-left: 3em;
 }
 
 .tour-box {
-  width: 70%;
+  width: 65%;
   background-color: #FFEBBA;
   padding: 1em;
   border-radius: 25px;
@@ -181,9 +191,9 @@ a {
 
 .steps {
   margin: auto;
-  width: 60%;
+  width: 80%;
   text-align: center;
-  display: block;
+  display: inline-block;
 }
 
 .step-photo {
@@ -235,6 +245,7 @@ a {
 
 .map{
   padding-bottom: 10em;
+  padding-top: 5em;
 }
 
 

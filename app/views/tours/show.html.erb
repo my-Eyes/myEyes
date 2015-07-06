@@ -1,7 +1,7 @@
 <h1 class="show-tour">
   <%= @tour.name %> by <%= @local.first_name %> <%= @local.last_name %>
 </h1>
-
+<div class="user-tours">
 <% @tour_steps.each do |step| %>
   <div class="steps">
       <p>Step Number: <%= step.number %></p>
@@ -21,7 +21,7 @@
     </div>
   </div>
 <% end %>
-
+</div>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
