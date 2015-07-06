@@ -15,6 +15,9 @@
 
     <form class="location_submit_form" action="/locations" method="post">
       <div class="address_fields">
+        <label name="name">Where are we going?</label>
+        <input type="text" name="name">
+        <br>
         <label name="neighborhood">Neighborhood</label>
         <input type="text" name="neighborhood">
         <br>
@@ -26,12 +29,6 @@
         <br>
         <label name="state">State</label>
         <input type="text" name="state">
-        <br>
-        <label name="latitude">Latitude</label>
-        <input type="text" name="latitude">
-        <br>
-        <label name="longitude">Longitude</label>
-        <input type="text" name="longitude">
         <br>
         <input type="submit" value="Add location">
       </div>
