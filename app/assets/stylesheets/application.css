@@ -128,14 +128,41 @@ a {
 }
 
 .address_fields {
-  width: 20%;
+  width: 30%;
   margin: auto;
   text-align: right;
 }
 
-/*======================================View New Tour=======================*/
+/*======================================View Tour=======================*/
+.show-tour {
+  margin-left: 3em;
+}
 
+.steps {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  display: block;
+}
 
+.step-photo {
+  text-align: left;
+  display: inline-block;
+  width: 25%;
+}
+
+.step-photo img {
+  max-height: 10em;
+  max-width: 10em;
+}
+
+.description {
+  text-align: left;
+  float: right;
+  display: inline-block;
+  width: 25%;
+  padding-bottom: 40em;
+}
 
 
 
