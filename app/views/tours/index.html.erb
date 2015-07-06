@@ -1,7 +1,14 @@
 <h1>Index list of tours</h1>
 
-<% @tours.each do |tour| %>
-  <% local = tour.local %>
-  <%= link_to ("#{tour.name}"), user_tour_path(local.id, tour) %>: <%= tour.description %> by <%= local.first_name %>
-  <br>
-<% end %>
+  <div class="tour-lists steps profile">
+  <% @tours.each do |tour| %>
+    <% user = tour.local_id %>
+    <% local = User.find(1) %>
+    <div class="tour steps">
+      <p><img src=<%= "#{tour.photo_url}" %>></p>
+      <p class="description"><%= link_to ("#{tour.name}"), user_tour_path(@user, tour.id) %>: <%= tour.description %> by <%= local.first_name %></p>
+    </div>
+  <% end %>
+  </div>
+
+  <!-- This page is a work in progress as far as css goes, but it's 4:30 am and I'm going to go to bed. Also, it will throw an error if you change the 1 on line 6 to 'user' because some of the tours don't have local_id's.  -->
