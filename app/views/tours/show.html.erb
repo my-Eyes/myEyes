@@ -1,47 +1,27 @@
 <h1 class="show-tour">
   <%= @tour.name %> by <%= @local.first_name %> <%= @local.last_name %>
 </h1>
+<div class="user-tours">
 <% @tour_steps.each do |step| %>
-<div class="steps">
-    <p>Step Number: <%= step.number %></p>
-  <div class="step-photo">
-    <% picture_id = step.photo_id %>
-    <% image = Photo.find(picture_id) %>
-    <p><img src=<%= "#{image.url}" %>></p>
+  <div class="steps">
+      <p>Step Number: <%= step.number %></p>
+    <div class="step-photo">
+      <% picture_id = step.photo_id %>
+      <% image = Photo.find(picture_id) %>
+      <p><img src=<%= "#{image.url}" %>></p>
+    </div>
+    <div class="description">
+      Description: <%= step.text %>
+      <% address_id = step.location_id %>
+      <% address = Location.find(address_id) %>
+      <br>Name: <%= address.name %>
+      <br>Neighborhood: <%= address.neighborhood %>
+      <br><%= address.address %>
+      <br><%= address.city %>, <%= address.state %>
+    </div>
   </div>
-  <div class="description">
-    Description: <%= step.text %>
-    <% address_id = step.location_id %>
-    <% address = Location.find(address_id) %>
-    <br>Name: <%= address.name %>
-    <br>Neighborhood: <%= address.neighborhood %>
-    <br><%= address.address %>
-    <br><%= address.city %>, <%= address.state %>
-  </div>
+<% end %>
 </div>
-<% end %>
-  <%= Location.find(step.location_id).name %>
-  <br>
-  <%= step.text %>
-<% end %>
-
-<style>
-  html, body, #map-canvas {
-    height: 100%;
-    margin: 0px;
-    padding: 0px
-  }
-  #panel {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    margin-left: -180px;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-  }
-</style>
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
@@ -111,11 +91,10 @@
   google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+<div class="map">
+<div id="map-canvas"></div>
 
-<div id="map-canvas" style="float:left;width:70%;height:100%;"></div>
-
-<div id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px">
-  <div style="margin:20px;border-width:2px;">
+<div id="control_panel">
 
     <b>Start:</b>
 
@@ -135,12 +114,15 @@
     </select>
     <br>
     <b>End:</b>
-    <select id="end">
-      <option value="2049 Irving St, San Francisco, CA 94122">Happy Donut 9</option>
-    </select>
+      <select id="end">
+        <option value="2049 Irving St, San Francisco, CA 94122">Happy Donut 9</option>
+      </select>
     <br>
     <input type="submit" onclick="calcRoute();">
   </div>
-  <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
+
+  <div id="directions_panel"></div>
+
+
 </div>
 

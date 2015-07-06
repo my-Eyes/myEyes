@@ -7,8 +7,7 @@
     <h3>Keep exploring new areas!</h3>
   </div>
 
-
-  <div class="tour-sections">
+  <div class="both-buttons">
     <div class="buttons">
       <%= button_to "Create New Tour", new_user_tour_path(@user.id), :method => :get %>
     </div>
@@ -16,6 +15,8 @@
     <div class="buttons">
       <%= button_to "Browse Tours", user_tours_path(@user.id), :method => :get %>
     </div>
+    </div>
+<div class="tour-lists">
 
     <h2>Your Favorites</h2>
     <div class="tour">
@@ -31,7 +32,6 @@
           <p><%= link_to ("#{tour.name}"), user_tour_path(@user.id, tour.id) %></p>
         </div>
       <% end %>
-
 
 
     </div>
