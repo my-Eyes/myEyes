@@ -16,19 +16,19 @@
     <form class="location_submit_form" action="/locations" method="post">
       <div class="address_fields">
         <label name="name">Where are we going?</label>
-        <input type="text" name="name">
+        <input id="name" type="text" name="name">
         <br>
         <label name="neighborhood">Neighborhood</label>
         <input type="text" name="neighborhood">
         <br>
         <label name="address">Address</label>
-        <input type="text" name="address">
+        <input id="address" type="text" name="address">
         <br>
         <label name="city">City</label>
-        <input type="text" name="city">
+        <input id="city" type="text" name="city">
         <br>
         <label name="state">State</label>
-        <input type="text" name="state">
+        <input id="state" type="text" name="state">
         <br>
         <input type="submit" value="Add location">
       </div>
@@ -84,43 +84,6 @@
     directionsDisplay.setMap(map);
   }
 
-  function calcRoute() {
-    var start = document.getElementById('start').value;
-    var end = document.getElementById('end').value;
-    var waypts = [];
-    var checkboxArray = document.getElementById('waypoints');
-    for (var i = 0; i < checkboxArray.length; i++) {
-      if (checkboxArray.options[i].selected == true) {
-        waypts.push({
-            location:checkboxArray[i].value,
-            stopover:true});
-      }
-    }
-
-    var request = {
-        origin: start,
-        destination: end,
-        waypoints: waypts,
-        optimizeWaypoints: true,
-        travelMode: google.maps.TravelMode.WALKING
-    };
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-        var route = response.routes[0];
-        var summaryPanel = document.getElementById('directions_panel');
-        summaryPanel.innerHTML = '';
-        // For each route, display summary information.
-        for (var i = 0; i < route.legs.length; i++) {
-          var routeSegment = i + 1;
-          summaryPanel.innerHTML += '<b>Tour Section: ' + routeSegment + '</b><br>';
-          summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-          summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-          summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
-        }
-      }
-    });
-  }
 
   google.maps.event.addDomListener(window, 'load', initialize);
 
@@ -131,43 +94,10 @@
 <div id="control_panel" style="float:right;width:30%;text-align:left;padding-top:20px">
   <div style="margin:20px;border-width:2px;">
 
-    <b>Start:</b>
+  <select multiple id="waypoints">
 
-    <select id="start">
-      <option value="100 Bush St #101, San Francisco, CA 94104">Happy Donut 1</option>
-    </select>
-    <br>
-    <b>Tour Steps:</b> <br>
-    <i>(Ctrl-Click for multiple selection)</i> <br>
-    <select multiple id="waypoints">
-      <option value="761 3rd St, San Francisco, CA 94107">
-        Happy Donut 2
-      </option>
-      <option value="145 Columbus Ave, San Francisco, CA 94133">
-        Happy Donut 3
-      </option>
-      <option value="3801 24th St, San Francisco, CA 94114">
-        Happy Donut 4
-      </option>
-      <option value="2600 Bayshore Blvd, San Francisco, CA 94134">
-        Happy Donut 5
-      </option>
-      <option value="727 Goettingen St, San Francisco, CA 94134">
-        Happy Donut 6
-      </option>
-      <option value="1794 Haight St, San Francisco, CA 94117">
-        Happy Donut 7
-      </option>
-      <option value="2101 Van Ness Ave, San Francisco, CA 94109">
-        Happy Donut 8
-      </option>
-    </select>
-    <br>
-    <b>End:</b>
-    <select id="end">
-      <option value="2049 Irving St, San Francisco, CA 94122">Happy Donut 9</option>
-    </select>
-    <br>
+  </select>
+
     <input type="submit" onclick="calcRoute();">
   </div>
   <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
