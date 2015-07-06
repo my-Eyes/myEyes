@@ -140,7 +140,7 @@ a {
 
 .steps {
   margin: auto;
-  width: 50%;
+  width: 60%;
   text-align: center;
   display: block;
 }
@@ -160,8 +160,8 @@ a {
   text-align: left;
   float: right;
   display: inline-block;
-  width: 25%;
-  padding-bottom: 40em;
+  width: 35%;
+  /*padding-bottom: 40em;*/
 }
 
 

@@ -10,10 +10,11 @@
     <p><img src=<%= "#{image.url}" %>></p>
   </div>
   <div class="description">
-    <br>Description: <%= step.text %>
+    Description: <%= step.text %>
     <% address_id = step.location_id %>
     <% address = Location.find(address_id) %>
-    <br><%= address.name %>, <%= address.neighborhood %>
+    <br>Name: <%= address.name %>
+    <br>Neighborhood: <%= address.neighborhood %>
     <br><%= address.address %>
     <br><%= address.city %>, <%= address.state %>
   </div>
