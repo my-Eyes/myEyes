@@ -1,6 +1,7 @@
 <h1>Index list of tours</h1>
 
 <% @tours.each do |tour| %>
-  <%= link_to ("#{tour.name}") %>: <%= tour.description %> by <%= tour.local_id %>
+  <% local = tour.local %>
+  <%= link_to ("#{tour.name}"), user_tour_path(local.id, tour) %>: <%= tour.description %> by <%= local.first_name %>
   <br>
 <% end %>
