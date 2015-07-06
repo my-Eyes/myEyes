@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+
   def create
     location = Location.new(
                             neighborhood: params[:neighborhood],
@@ -15,4 +16,5 @@ class LocationsController < ApplicationController
       render json: { saved: false, errors: location.errors }
     end
   end
+
 end
