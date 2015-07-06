@@ -161,24 +161,42 @@ a {
   float: right;
   display: inline-block;
   width: 35%;
-  /*padding-bottom: 40em;*/
 }
 
 
+/*=================================Maps=======================================*/
+
+#map-canvas {
+  float:left;
+  width:30em;
+  height: 30em;
+  text-align: center;
+  margin-left: 10%;
+}
+
+#control_panel {
+  float:right;
+  width:30%;
+  text-align:left;
+  padding-top:20px;
 
 
 
+  /*margin:20px;*/
+  /*border-width:2px;*/
 
+}
 
-
-
-
-
-
-
-
-
-
+#panel {
+  position: relative;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
 
 
 
