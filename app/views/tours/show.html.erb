@@ -44,11 +44,20 @@
   }
 
   function calcRoute() {
-    var start = document.getElementById('start').value;
-    var end = document.getElementById('end').value;
+    // var start = document.getElementById('start').value;
+    // var end = document.getElementById('end').value;
+    var start;
+    var end;
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');
     for (var i = 0; i < checkboxArray.length; i++) {
+      if (i == 0){
+        start = checkboxArray.value
+      }
+      if (i == checkboxArray.length - 1){
+        end = checkboxArray.value
+      }
+
       if (checkboxArray.options[i].selected == true) {
         waypts.push({
             location:checkboxArray[i].value,
@@ -99,27 +108,12 @@
     <b>Tour Steps:</b> <br>
     <i>(Ctrl-Click for multiple selection)</i> <br>
     <select multiple id="waypoints">
-      <option value="761 3rd St, San Francisco, CA 94107">
-        Happy Donut 2
-      </option>
-      <option value="145 Columbus Ave, San Francisco, CA 94133">
-        Happy Donut 3
-      </option>
-      <option value="3801 24th St, San Francisco, CA 94114">
-        Happy Donut 4
-      </option>
-      <option value="2600 Bayshore Blvd, San Francisco, CA 94134">
-        Happy Donut 5
-      </option>
-      <option value="727 Goettingen St, San Francisco, CA 94134">
-        Happy Donut 6
-      </option>
-      <option value="1794 Haight St, San Francisco, CA 94117">
-        Happy Donut 7
-      </option>
-      <option value="2101 Van Ness Ave, San Francisco, CA 94109">
-        Happy Donut 8
-      </option>
+
+      <% @tour_steps.each do |step| %>
+        <% address = Location.find(step.location_id).address + ' ' + Location.find(step.location_id).city + ' ' + Location.find(step.location_id).state%>
+        <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+      <% end %>
+
     </select>
     <br>
     <b>End:</b>

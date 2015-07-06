@@ -22,6 +22,9 @@ class ToursController < ApplicationController
   def show
     @tour = Tour.find(params[:id])
     @tour_steps = @tour.steps
+    p '*' * 30
+    p @tour_steps
+    p '*' * 30
     @local = User.find(@tour.local_id)
   end
 
