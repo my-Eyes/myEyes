@@ -26,3 +26,6 @@ class ToursController < ApplicationController
   end
 
 end
+
+
+
