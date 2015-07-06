@@ -5,4 +5,6 @@ class Tour < ActiveRecord::Base
   belongs_to :interest
   has_many :saved_tours
   has_many :favorite_tours
+
+  validates :photo_url, presence: true
 end

@@ -4,9 +4,8 @@ class LocationsController < ApplicationController
                             neighborhood: params[:neighborhood],
                             city: params[:city],
                             state: params[:state],
-                            latitude: params[:latitude],
-                            longitude: params[:longitude],
-                            address: params[:address]
+                            address: params[:address],
+                            name: params[:name]
       )
 
     if location.save

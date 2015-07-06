@@ -10,7 +10,7 @@ class ToursController < ApplicationController
 
   def create
 
-    @tour = Tour.new(name: params[:tour][:name], local_id: current_user.id, description: params[:tour][:description])
+    @tour = Tour.new(name: params[:tour][:name], local_id: current_user.id, description: params[:tour][:description], photo_url: params[:tour][:photo_url])
 
     if @tour.save
       redirect_to "/users/#{current_user.id}/tours/#{@tour.id}/steps/new"
@@ -26,3 +26,6 @@ class ToursController < ApplicationController
   end
 
 end
+
+
+

@@ -1,6 +1,22 @@
-<h1>
+<h1 class="show-tour">
   <%= @tour.name %> by <%= @local.first_name %> <%= @local.last_name %>
 </h1>
 <% @tour_steps.each do |step| %>
-  <%= step.number %>
+<div class="steps">
+    <p>Step Number: <%= step.number %></p>
+  <div class="step-photo">
+    <% picture_id = step.photo_id %>
+    <% image = Photo.find(picture_id) %>
+    <p><img src=<%= "#{image.url}" %>></p>
+  </div>
+  <div class="description">
+    Description: <%= step.text %>
+    <% address_id = step.location_id %>
+    <% address = Location.find(address_id) %>
+    <br>Name: <%= address.name %>
+    <br>Neighborhood: <%= address.neighborhood %>
+    <br><%= address.address %>
+    <br><%= address.city %>, <%= address.state %>
+  </div>
+</div>
 <% end %>
