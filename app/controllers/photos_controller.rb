@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+
   def create
     photo = Photo.new(url: params[:photoAddress])
     p "***********************address: #{params[:photoAddress]} ******************************"
@@ -8,6 +9,6 @@ class PhotosController < ApplicationController
     else
       render json: { saved: false }
     end
-
   end
+
 end
