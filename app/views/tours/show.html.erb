@@ -96,33 +96,40 @@
 
 <div id="control_panel">
 
-    <b>Start:</b>
+    <!-- <b>Start:</b>
 
     <select id="start">
       <option value="100 Bush St #101, San Francisco, CA 94104">Happy Donut 1</option>
-    </select>
-    <br>
-    <b>Tour Steps:</b> <br>
-    <i>(Ctrl-Click for multiple selection)</i> <br>
-    <select multiple id="waypoints">
+    </select> -->
 
-      <% @tour_steps.each do |step| %>
-        <% address = Location.find(step.location_id).address + ' ' + Location.find(step.location_id).city + ' ' + Location.find(step.location_id).state%>
-        <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+
+    <% @tour_steps.each do |step| %>
+      <% address = Location.find(step.location_id).address + ' ' + Location.find(step.location_id).city + ' ' + Location.find(step.location_id).state%>
+
+      <% if step.number == 1 %>
+        <b>Start:</b>
+        <select id="start">
+          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+        </select>
+        <br>
+      <% elsif step.number != @tour_steps.length - 1 %>
+        <br>
+        <b>Tour Steps:</b> <br>
+        <i>(Ctrl-Click for multiple selection)</i> <br>
+        <select multiple id="waypoints">
+          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+        </selct>
+      <% else %>
+        <b>End:</b>
+        <select id="end">
+          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+        </select>
       <% end %>
+    <% end %>
+    <br>
 
-    </select>
-    <br>
-    <b>End:</b>
-      <select id="end">
-        <option value="2049 Irving St, San Francisco, CA 94122">Happy Donut 9</option>
-      </select>
-    <br>
     <input type="submit" onclick="calcRoute();">
   </div>
 
   <div id="directions_panel"></div>
-
-
 </div>
-

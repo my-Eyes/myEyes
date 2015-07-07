@@ -82,9 +82,9 @@ var markers_listener = function(){
   })
 }
 
-var add_step = function(address, name, waypoints){
-  var option = '<option value="' + address +'">' + name + '</option>';
-  console.log(waypoints);
-  waypoints.append(option);
+// var add_step = function(address, name, waypoints){
+//   var option = '<option value="' + address +'">' + name + '</option>';
+//   console.log(waypoints);
+//   waypoints.append(option);
 
-}
+// }
