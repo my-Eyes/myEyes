@@ -99,12 +99,13 @@
 
 
     <% @tour_steps.each do |step| %>
-      <% address = Location.find(step.location_id).address + ' ' + Location.find(step.location_id).city + ' ' + Location.find(step.location_id).state%>
+      <% location = Location.find(step.location_id) %>
+      <% address = location.address + ' ' + location.city + ' ' + location.state%>
 
       <% if step.number == 1 %>
         <b>Start:</b>
         <select id="start">
-          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+          <option value=<%= "#{address}" %>><%= "#{location.name}" %></option>
         </select>
         <br>
       <% elsif step.number != @tour_steps.length - 1 %>
@@ -112,12 +113,12 @@
         <b>Tour Steps:</b> <br>
         <i>(Ctrl-Click for multiple selection)</i> <br>
         <select multiple id="waypoints">
-          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+          <option value=<%= "#{address}" %>><%= "#{location.name}" %></option>
         </selct>
       <% else %>
         <b>End:</b>
         <select id="end">
-          <option value=<%= "#{address}" %>><%= "#{Location.find(step.location_id).name}" %></option>
+          <option value=<%= "#{address}" %>><%= "#{location.name}" %></option>
         </select>
       <% end %>
     <% end %>
@@ -127,4 +128,4 @@
   </div>
 
   <div id="directions_panel"></div>
-</div>
+</div></div>
